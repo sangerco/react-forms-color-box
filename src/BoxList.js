@@ -6,25 +6,23 @@ import './BoxList.css'
 
 const BoxList = () => {
     const INITIAL_STATE = [
-        { key: uuid(), backgroundColor: 'blue', width: '200', height: '200' }
+        { id: uuid(), backgroundColor: 'blue', width: '200', height: '200' }
     ]
     const [ boxes, setBoxes ] = useState(INITIAL_STATE);
     const addBox = (newBox) => {
-        setBoxes(boxes => [...boxes, {...newBox, key: uuid()}])
+        setBoxes(boxes => [...boxes, {...newBox, id: uuid()}])
     }
-    const removeBox = (e) => {
-        const box = e.target.parentNode
-        let boxList = [...boxes]
-        boxList.splice(box, 1);
-        setBoxes(boxList);
+    const removeBox = (id) => {
+        setBoxes(boxes => boxes.filter(box => box.id !== id))
     }
 
     return (
         <div className='BoxList'>
             <div className='BoxList-boxes'>
-                {boxes.map(({ key, backgroundColor, width, height }) => 
+                {boxes.map(({ id, backgroundColor, width, height }) => 
                     <Box 
-                        key={key} 
+                        key={id} 
+                        id={id}
                         backgroundColor={backgroundColor} 
                         width={width} 
                         height={height}
