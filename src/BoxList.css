@@ -1,0 +1,8 @@
+.BoxList {
+    text-align: center;
+}
+
+.BoxList-boxes {
+    display: inline-block;
+    margin: 10px auto;
+}

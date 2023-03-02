@@ -1,0 +1,9 @@
+.NewBoxForm {
+    display: flex;
+}
+
+.NewBoxForm form {
+    margin: auto;
+    width: 25vw;
+
+}

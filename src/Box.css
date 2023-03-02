@@ -1,0 +1,7 @@
+.Box {
+    display: flex;
+}
+
+.Box-btn {
+    margin-right: auto;
+}
